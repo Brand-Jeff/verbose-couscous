@@ -1,0 +1,524 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    line-height: 1.5;
+}
+
+html {
+    display: block;
+    font-size: 100%;
+}
+
+img {
+    max-width: 100%;
+}
+
+:root {
+    --fs-xs: 0.75rem;
+    --fs-sm:0.875rem;
+    --fs-base: 1rem;
+    --fs-lg: 1.25rem;
+    --fs-xl: 1.5rem;
+    --fs-2xl: 2rem;
+    --fs-3xl: 3rem;
+}
+
+body {
+    font-family: 'inter';
+    background-color: #000;
+    color: #fff;
+}
+
+/* nav section */ 
+.nav  {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 2rem;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 2rem;
+}
+
+.nav .nav-logo {
+    text-decoration: none;
+    color: inherit;
+    font-size: var(--fs-base);
+}
+
+.nav li a {
+    text-decoration: none;
+    list-style: none;
+    color: #fff;
+}
+
+ul {
+    list-style: none;
+}
+
+.nav ul li a:hover {
+    color: #ccc;
+}
+
+.logo {
+   color: #fff;
+   text-decoration: none;
+   font-size: var(--fs-2xl);
+}
+
+.logo:hover {
+    color: #9ca3af;
+}
+
+/* hero section */ 
+
+.hero__container {
+    height: 90vh;
+    background-image: linear-gradient(rgba(0,0,0,0.7),
+    rgba(0,0,0,1)),
+    url(./img/Images/planet-volumes-XIZwjEtI2VA-unsplash.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+.hero-title {
+    font-size: clamp(2rem, 6vw, 4rem);
+    font-weight: 700;
+    line-height: 1.1;
+    color: #fff;
+}
+
+.hero-description {
+    font-size: 2rem;
+    line-height: 1.6;
+    color: #9ca3af;
+    max-width: 64ch;
+}
+
+.hero-btn {
+    padding: 0.5rem;
+    margin: 1rem;
+}
+
+/* pre features */ 
+
+.pre__feat__container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 2rem;
+    max-width: 2000px;
+    height: 500px;
+    margin: 0 auto;
+    padding: 2rem 4rem;
+}
+
+.pre-feat-title {
+    flex: 1;
+    font-size: clamp(2rem, 6vw, 4rem);
+    font-weight: 700;
+    line-height: 1.1;
+    color: #fff;
+}
+
+.pre-feat-description {
+    flex: 1;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #9ca3af;
+    max-width: 60ch;
+}
+
+.pre-feat-btn {
+    margin-top: 1rem;
+    background: none;
+    border: none;
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: underline;
+
+}
+
+/* feature cards */
+
+.feature-cards-container {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+}
+
+.feature-card {
+    background-color: #111;
+    border-radius: 1rem;
+    padding: 2rem;
+    width: 280px;
+    text-align: left;
+    color: #9ca3af;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.feature-img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 1rem;
+    border-radius: 0.5rem;
+}
+
+.feature-text {
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.feature-img-wrapper {
+    width: 100%;
+    height: 230px;             /* set consistent height for all images */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;          /* crops if image is too tall/wide */
+    border-radius: 0.5rem;     /* optional, matches card style */ 
+  }
+  
+  .feature-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;         /* fills wrapper, crops overflow */
+  }
+
+
+  
+
+/* the marquee build */ 
+
+.wrapper {
+    width: 90%;
+    max-width: 1536px;
+    margin-inline: auto;
+    height: 100px;
+    margin-top: 5rem;
+    overflow: hidden;
+    
+
+    display: flex;
+    align-items: center;
+}
+
+.marquee {
+   overflow: hidden;
+   white-space: nowrap;
+   width: 100%;
+}
+
+.marquee__inner {
+    display: inline-block;
+    animation: scroll-left 20s linear infinite;
+}
+
+/* Duplicate the children automatically */
+
+.marquee__inner span {
+    display: inline-block;
+    margin-right: 2rem;
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+
+.marquee__inner::after {
+    content: attr(data-text); /* fallback if you set data-text */
+  }
+  
+  @keyframes scroll-left {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%); /* scroll halfway, then loop */
+    }
+  }
+
+
+
+/* Services */
+
+.services {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    max-width: 2000px;
+    height: 500px;
+    margin: 2rem 1rem;
+    padding: 4rem 2rem;
+    color: #fff;
+}
+
+.services:nth-child(even) {
+    flex-direction: row-reverse; /* flip image + text on every even section */
+  }
+
+.services-text {
+    display: flex;
+    flex-direction: column; /* stack title and description */
+    flex: 1; /* take left space */
+}
+
+.serv-title {
+    font-size: clamp(2rem, 6vw, 4rem);
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+.serv-description {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #9ca3af;
+    max-width: 40ch;
+    margin-top: 1rem; /* adds spacing below title */
+}
+
+.serv-img {
+    flex: 1; /* takes right space */
+    max-width: 600px; /* or whatever size you want */
+    width: 100%;
+    height: auto;
+    border-radius: 0.5rem;
+}
+
+
+/* testimonial */ 
+
+.Testimonial {
+    padding: 4rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .Testimonial h1 {
+    font-size: 3rem;
+    text-align: left;
+    margin-bottom: 2rem;
+    font-weight: bold;
+  }
+  
+  .test-container {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap; /* keeps it responsive */
+  }
+  
+  .test-card {
+    flex: 1 1 30%; /* each card takes ~30% on desktop */
+    background: #f8f8f8;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  }
+  
+  .test-card h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #333;
+  }
+  
+  .test-card p {
+    line-height: 1.6;
+    color: #444;
+  }
+
+
+/* CTA */
+
+.cta {
+    height: 90%;
+    background-image: linear-gradient(rgba(0,0,0,0.7),
+    rgba(0,0,0,1)),
+    url(./img/Images/milad-fakurian-6wnc0ATp34o-unsplash.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+
+    max-width: 2000px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+.cta-title {
+    font-size: clamp(1rem, 6vw, 4rem);
+    font-weight: 700;
+    line-height: 1.1;
+    color: #fff;
+}
+
+.cta-description {
+    font-size: 1.5rem;
+    line-height: 1.6;
+    color: #9ca3af;
+    max-width: 60ch;
+}
+
+.cta-btn {
+    padding: 0.5rem;
+    margin: 1rem;
+}
+
+
+/* Footer */
+ 
+.footer {
+    background: #000;
+    color: #9ca3af;
+    padding: 4rem 2rem;
+  }
+  
+  .footer-top {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+  
+  .footer-links {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+  }
+  
+  .footer-links h3 {
+    color: #fff;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .footer-links a {
+    color: #9ca3af;
+    text-decoration: none;
+    font-size: 0.9rem;
+  }
+  
+  .footer-links a:hover {
+    color: #fff;
+  }
+  
+  .footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.8rem;
+    border-top: 1px solid #222;
+    padding-top: 1.5rem;
+  }
+  
+
+ 
+  
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* media queries */ 
+.container {
+    max-width: 475px;
+    margin-inline: auto;
+    padding-inline: 0.5rem;
+}
+
+/* XS */ 
+@media (min-width: 475px) {
+    .container {
+        max-width: 475px;
+    }
+}
+       
+/* SM */ 
+@media (min-width: 640px) {
+    .container {
+        max-width: 640px;
+    }
+} 
+
+/* MD */ 
+@media (min-width: 768px) {
+    .container {
+        max-width: 768px;
+    }
+} 
+
+/* LG */ 
+@media (min-width: 1024px) {
+    .container {
+        max-width: 1024px;
+    }
+} 
+
+/* XL */ 
+@media (min-width: 1280px) {
+    .container {
+        max-width: 1280px;
+    }
+} 
+
+/* 2XL */ 
+@media (min-width: 1536px) {
+    .container {
+        max-width: 1536px;
+    }
+} 
+
+@media (max-width: 768px) {
+    .pre__feat__container {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .pre-feat-right {
+      margin-top: 1.5rem;
+    }
+  }
+  
+
+
+ 
